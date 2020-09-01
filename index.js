@@ -1,8 +1,21 @@
+require("dotenv").config();
 const express = require("express");
 const server = express();
 
+const axios = require("axios");
+
 server.get("/", (req, res) => {
   res.send("welcome home ");
+});
+
+server.get("/movies", (req, res) => {
+  axios
+    .get(
+      "http://www.omdbapi.com/?i=tt3896198&apikey=" + processs.env.OMBD_API_KEY
+    )
+    .then((results) => {
+      res.send(results.data);
+    });
 });
 
 server.get("/github", (req, res) => {
