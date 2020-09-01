@@ -5,6 +5,8 @@ server.get("/", (req, res) => {
   res.send("welcome home ");
 });
 
-server.listen(3000, () => {
+let PORT = process.env.PORT ? process.env.port : 3000;
+
+server.listen(PORT, () => {
   console.log("server is listening");
 });
