@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
 server.get("/movies", (req, res) => {
   axios
     .get(
-      "http://www.omdbapi.com/?i=tt3896198&apikey=" + processs.env.OMBD_API_KEY
+      "http://www.omdbapi.com/?i=tt3896198&apikey=" + processs.env.OMDB_API_KEY
     )
     .then((results) => {
       res.send(results.data);
